@@ -1,0 +1,124 @@
+@fontFamilyPingFangLight: 'PingFangSC-Light','华文黑体','黑体',"Helvetica Neue";
+@fontFamilyPingFangRegular: 'PingFangSC-Regular','Microsoft YaHei','SimSun','Helvetica','sans-serif;';
+@colorCustomRed: rgba(193,93,62,.9);
+
+/*************cell相关************/
+.djCells {
+    background: #fff;
+    font-size: 0.3rem;
+}
+.innerCells {
+    margin: 0 0.15rem;
+}
+.djCellSpace {
+    margin-top: 0.2rem;
+}
+.djCells .djCell {
+    margin-left: 0.3rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.28rem;
+    padding-right: .3rem;
+    border-top: 0.015rem solid #eee;
+}
+.djCells .djCell.muCell .cellLeft {
+    position: relative;
+    width: 25%;
+    float: left;
+}
+.djCells .djCell.muCell .cellRight {
+    width: 73%;
+    float: right;
+}
+.djCells .djCellTitle {
+    margin-left: 0.3rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.28rem;
+    padding-right: .3rem;
+    border-top:0;
+    font-size: 0.32rem;
+    color: #333;
+}
+.djCells .djCell .cellRight {
+    text-align: right;
+}
+.djCells .djCell.col2 {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+}
+.djCells .djCell.col3 {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+}
+.djFullTableCells {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-gap:0;
+    column-gap:0;
+    background: #FCFCFC;
+    border-top: 0.015rem solid rgba(0,0,0,.06);
+    font-size: 0.32rem;
+}
+.djFullTableCells .cell{
+    padding: .35rem .3rem;
+    border-bottom:0.015rem solid rgba(0,0,0,.06);
+}
+.djFullTableCells .even{
+    border-right:0.015rem solid rgba(0,0,0,.06);
+}
+.djChinesePatenMedicineCells {
+    border-top: 0.015rem solid rgba(0,0,0,.06);
+}
+.djChinesePatenMedicineCells .djCell  {
+    margin-left: 0.3rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.28rem;
+    padding-right: .3rem;
+    border-top: 0.015rem solid rgba(0,0,0,.06);
+}
+.djChinesePatenMedicineCells .djCell :first-child {
+    border-top: 0 !important;
+}
+.djChinesePatenMedicineCells .djCell  .fm {
+    font-family: @fontFamilyPingFangRegular;
+    font-size: 0.3rem;
+    letter-spacing: 0;
+    line-height: 0.4rem;
+}
+.djChinesePatenMedicineCells .djCell  .fi {
+    margin-top:.20rem;
+    font-family: @fontFamilyPingFangLight;
+    font-size: .25rem;
+    color: rgba(153,153,153,.8);
+    letter-spacing: 0;
+}
+.djChinesePatenMedicineCells .djCell  .fi span {
+    display: block;
+}
+.djChinesePatenMedicineCells .djCell  .fi span.infoImportant {
+    margin-top:.2rem;
+    font-family: @fontFamilyPingFangLight;
+    font-size: .3rem;
+    color: rgba(51,51,51,1);
+    padding:.35rem .2rem;
+    background-image: url('../img/top-left.png');
+    background-size: 0.3rem 0.3rem;
+    background-repeat: no-repeat;
+    background-color: #F8F8F8;
+    border-radius: 0.01rem;
+}
+.tInnerCells .col2:first-child {
+    border-top:0px;
+}
+.colorInfoRed {
+    color: @colorCustomRed;
+}
+.infoSmallWhite {
+    font-size: 0.25rem;
+}
+.infoSmallLight, .infoSmallLight a{
+    font-size: 0.25rem;
+    color: rgba(255,255,255,0.6);
+}
+.infoSmallLight a {
+    text-decoration: none;
+}

@@ -1,0 +1,439 @@
+//color
+@colorPrimary: rgba(192,93,62,1);
+@colorDuckBlack: rgba(51,51,51,1);
+@colorDuckGrey: rgba(102,102,102,1);
+@colorLightGrey: rgba(153,153,153,1);
+
+//background
+@bgColorDefault: rgba(245,245,245,1);
+
+//line
+@lineColorDefault: rgba(238,238,238,1);
+
+//space
+@spaceColorDefault: rgba(248,248,248,1);
+
+//font
+@fontFamilyDefault: 'Heiti SC','华文黑体','黑体',"Helvetica Neue";
+@fontFamilyTitle: 'Open Sans,Arial','Microsoft YaHei','SimSun','Helvetica','sans-serif;';
+@fontColorDefault: rgba(51,51,51,1);
+
+
+@line: 0.01rem solid @colorLightGrey;
+
+html,body {
+    margin: 0;
+    padding: 0;
+    font-size: 0.29rem;
+    color: @fontColorDefault;
+    font-family: @fontFamilyDefault;
+    background-color: @bgColorDefault;
+    word-break: break-all;
+    -webkit-text-size-adjust: 100% !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+	width:0;
+	height:0;
+}
+
+.wrap-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#container{
+    width: 100%;
+    height: auto;
+}
+
+#container .layoutFrame{
+    margin-top: 10px;
+    padding: 15px 0;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+#container > div:first-child{
+    animation: fade-in;
+    animation-duration: 0.3s;
+    -webkit-animation: fade-in 0.3s;
+}
+.plusBottom{
+    width: 100%;
+    height: 1rem;
+}
+
+.tabCell{
+    width: 33.33333%;
+    // height: auto;
+    height: 1rem;
+    float: left;
+    position: relative;
+}
+
+.tab0-off{
+    background-image: url('../img/tab/tab-0-off.png');
+}
+
+.tab0-on{
+    background-image: url('../img/tab/tab-0-on.png');
+}
+
+.tab1-on{
+    background-image: url('../img/tab/tab-1-on.png');
+}
+
+.tab1-off{
+    background-image: url('../img/tab/tab-1-off.png');
+}
+
+.tab2-on{
+    background-image: url('../img/tab/tab-2-on.png');
+}
+
+.tab2-off{
+    background-image: url('../img/tab/tab-2-off.png');
+}
+
+.tabIcon{
+    width: 0.38rem;
+    height: 0.38rem;
+    background-size: 0.38rem 0.38rem;
+    margin: 0 auto;
+    margin-top: 0.2rem;
+}
+
+.tabName{
+    width: 100%;
+    height: 0.2rem;
+    margin-top: 0.05rem;
+    font-size: 0.2rem;
+    text-align: center;
+}
+
+.tabNameOn{
+    color: rgba(193,93,62,1);
+}
+
+#loading{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    background-image: url('../img/loading.png');
+    background-size: 26px 26px;
+    animation: doLoading 1s linear infinite;
+}
+
+@-webkit-keyframes doLoading {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+    50% {
+        -webkit-transform: rotate(180deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes doLoading {
+    0% {
+        transform: rotate(0)
+    }
+    50% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+#mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+// .mask{
+//     opacity: 1;
+//     z-index: -99;
+// }
+
+.maskShow{
+    z-index: 99;
+    animation: 0.2s fadeIn 1;
+    animation-fill-mode: forwards;
+    background: rgba(0,0,0,0.30);
+}
+.maskOpacity{
+    z-index: 99;
+    animation: 0.2s fadeIn 1;
+    animation-fill-mode: forwards;
+    background: rgba(0,0,0,0);
+}
+
+@keyframes fadeIn{
+    0%   { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}/*初始状态 透明度为0*/
+    40% {opacity: 0;}/*过渡状态 透明度为0*/
+    100% {opacity: 1;}/*结束状态 透明度为1*/
+}
+@-webkit-keyframes fade-in {/*针对webkit内核*/
+    0% {opacity: 0;}
+    40% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.bigButton{
+    width: 6.9rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    vertical-align: middle;
+    font-size: 0.35rem;
+    text-align: center;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.activate{
+    background-color: #D46B4B;
+}
+
+.deactive{
+    background-color: rgba(205,205,205,1);
+}
+
+.defaultButton{
+    width: 5.4rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    vertical-align: middle;
+    font-size: 0.35rem;
+    color: white;
+    text-align: center;
+    background-color: @colorPrimary;
+    border-radius: 1rem;
+    margin: 0 auto;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+// 实际元素的宽高要减去0.1rem
+input, textarea{
+    width: 97%;
+    margin: 0;
+    border: none;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0);
+    -webkit-appearance: none;
+    border-radius: 0.1rem;
+    padding: 0.1rem;
+    font-size: 0.3rem;
+    color: rgba(51,51,51,1);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(190,190,190,1);
+}
+
+.textOverflow{
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.clickMask{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.center{
+    text-align: center;
+}
+
+.block {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.tianchong {
+    visibility: hidden;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear {
+    clear:both;
+}
+
+.relative {
+    position: relative;
+}
+
+.breakAll {
+    position: relative;
+    word-break:break-all;
+}
+
+.ellipsis {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.noBoderTop {
+    border-top: 0 !important;
+}
+.noBoderBottom {
+    border-bottom: 0 !important;
+}
+.ellipsisName {
+    max-width: 2.2rem;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/**-----------button样式-----------**/
+
+.btnHollowNormal {
+    position: relative;
+    border: 0.015rem solid #BEBEBE;
+    border-radius: 0.05rem;
+    float: right;
+    font-size:0.3rem;
+    background:white;
+    padding: 0.1rem 0.2rem;
+    margin-right:0.3rem;
+    color: @colorDuckGrey;
+    outline: none;
+}
+.btnHollowRed {
+    display: block;
+    color: #d36b4b;
+    text-align: center;
+    font-size: 0.32rem;
+    border: 0.02rem solid #d36b4b;
+    background: #fff;
+    padding: 0.21rem;
+    margin: 0.15rem 0.3rem;
+    border-radius: 0.1rem;
+}
+.alertDialogClose{
+    position: fixed;
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    bottom: 0.5rem;
+    border: 0.015rem solid #666;
+    color: #666;
+    font-size: 0.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-weight: 100;
+    left: 45%;
+}
+.cellAlertBottomClose {
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    bottom: 0.5rem;
+}
+.alertDialogCloseGray {
+    position: relative;
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    //border: solid 0.02rem #666666;
+    margin: 0 auto;
+    //border-radius: 0.6rem;
+    color: #666;
+    font-size: 0.4rem;
+    line-height: 0.67rem;
+    background: url('../img/close_circle.png') no-repeat;
+    background-size: 0.64rem 0.64rem;
+    width:0.64rem;
+    height:0.64rem;
+}
+
+.alertDialogCloseWhite{
+    position: relative;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-image: url('../img/close.png');
+    background-size: 0.6rem 0.6rem;
+    border: 0;
+    margin: 0 auto;
+    margin-top: 0.6rem;
+}
+/**-----------背景样式-----------**/
+
+.bgGradientCommon {
+    background-image: linear-gradient(270deg, #E18A4C 0%, #CE6341 100%);
+    border-radius: 0.05rem;
+    margin: 0 0.15rem;
+    margin-top: 0.15rem;
+}
+.bgGradientException {
+    background-image: linear-gradient(-90deg, #786556 0%, #63523A 100%);
+    border-radius: 0.05rem;
+    margin: 0 0.15rem;
+    margin-top: 0.15rem;
+}
+.frameBottomIntro {
+    padding: 0.25rem 0 0.4rem 0;
+    font-size: 0.25rem;
+}
+
+/**-----------列表页加载更多loading样式-----------**/
+#pullUpLoadingDiv{
+    color: #999;
+    text-align: center;
+    padding: 0.12rem 0 0.28rem 0;
+    font-size: 0.24rem;
+    .loadingImg{
+        display: inline-block;
+        background-image: url('../img/loading.png');
+        background-size: 20px 20px;
+        animation: doLoading 1s linear infinite;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 5px;
+        margin-right: 8px;
+    }
+}
+
+/*聊天中查看免费消息之后后台推送过来的tips消息样式**/
+.tipsSolutionAppreciate {
+  text-decoration: underline;
+  color: #3678e4;
+}
